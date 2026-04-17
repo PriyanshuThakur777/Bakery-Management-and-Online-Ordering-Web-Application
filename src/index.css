@@ -1,0 +1,512 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+:root {
+    --bg: #fff8f1;
+    --bg-soft: #fff2e4;
+    --surface: #ffffff;
+    --primary: #b93d2d;
+    --primary-dark: #92291e;
+    --accent: #f2b56d;
+    --text: #2f1d14;
+    --muted: #6a5142;
+    --border: #f1d7be;
+    --shadow: 0 12px 30px rgba(114, 58, 35, 0.12);
+}
+
+* {
+    font-family: "Nunito Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at top right, #ffe4c6 0%, var(--bg) 45%, #fffdf9 100%);
+    color: var(--text);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme {
+    --bg: #12100e;
+    --bg-soft: #1b1714;
+    --surface: #221d18;
+    --primary: #ff8b6e;
+    --primary-dark: #e76f53;
+    --accent: #f4c27b;
+    --text: #fff3ea;
+    --muted: #e7c9b6;
+    --border: #4a3a2f;
+    --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    background: radial-gradient(circle at top right, #2d2119 0%, #15120f 50%, #0f0d0b 100%);
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Lora", serif;
+    color: var(--text);
+}
+
+/* Navbar */
+.bakery-navbar {
+    background: linear-gradient(90deg, #fff8ed, #fff3df) !important;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 6px 20px rgba(80, 40, 20, 0.08);
+}
+
+body.dark-theme .bakery-navbar {
+    background: linear-gradient(90deg, #261c16, #1c1511) !important;
+}
+
+body.dark-theme,
+body.dark-theme p,
+body.dark-theme li,
+body.dark-theme small,
+body.dark-theme label,
+body.dark-theme .form-label {
+    color: var(--text);
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme h6 {
+    color: #fff4ec;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.6rem;
+    letter-spacing: 0.4px;
+    color: var(--text) !important;
+}
+
+.logo::first-letter {
+    color: var(--primary);
+}
+
+.nav-link {
+    color: var(--muted) !important;
+    font-weight: 700;
+    border-radius: 30px;
+    padding: 7px 14px !important;
+    transition: all 0.25s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary) !important;
+    background: #ffe6dc;
+}
+
+body.dark-theme .nav-link:hover {
+    background: #382a21;
+}
+
+body.dark-theme .nav-link {
+    color: #f3d8c7 !important;
+}
+
+.active-nav-link {
+    color: var(--primary) !important;
+    background: #ffe2d5;
+    box-shadow: inset 0 0 0 1px #f8c0a9;
+}
+
+body.dark-theme .active-nav-link {
+    background: #3f2b1f;
+    box-shadow: inset 0 0 0 1px #664737;
+    color: #ffd9c8 !important;
+}
+
+.theme-toggle-btn {
+    border: 1px solid var(--border) !important;
+    color: var(--text) !important;
+    background: var(--surface) !important;
+    border-radius: 999px !important;
+    font-weight: 700 !important;
+    padding: 4px 12px !important;
+}
+
+/* Global cards/buttons */
+.card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+body.dark-theme .card,
+body.dark-theme .menu,
+body.dark-theme .food-items,
+body.dark-theme .my-order-card,
+body.dark-theme .track-result,
+body.dark-theme .contact-info-box {
+    background: #261f1a;
+}
+
+body.dark-theme .form-control,
+body.dark-theme textarea.form-control {
+    background: #1b1613;
+    color: #fff3ea;
+    border: 1px solid #5a473b;
+}
+
+body.dark-theme .form-control::placeholder,
+body.dark-theme textarea.form-control::placeholder {
+    color: #d7b6a2;
+}
+
+body.dark-theme .form-control:focus,
+body.dark-theme textarea.form-control:focus {
+    background: #211a16;
+    color: #fff8f4;
+    border-color: #ff9a79;
+    box-shadow: 0 0 0 0.2rem rgba(255, 140, 110, 0.25);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--primary), #cf523f) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary)) !important;
+}
+
+.btn-outline-danger {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    border-radius: 12px !important;
+    font-weight: 700;
+}
+
+.btn-outline-danger:hover {
+    background: var(--primary) !important;
+    color: #fff !important;
+}
+
+/* Header */
+.header {
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #fff7ea, #ffe9d2);
+    border-bottom: 1px solid var(--border);
+}
+
+body.dark-theme .header {
+    background: linear-gradient(135deg, #231a14, #1a1410);
+}
+
+.header span,
+.text span,
+.menu span,
+.food-display span {
+    color: var(--primary);
+}
+
+.header p {
+    color: var(--muted);
+    text-align: justify;
+    line-height: 1.65;
+}
+
+img.delicious-food {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+/* About */
+.text h1,
+.text h2 {
+    text-align: center;
+}
+
+.text h2 {
+    margin-bottom: 20px;
+}
+
+.text p {
+    color: var(--muted);
+    text-align: center;
+}
+
+ul li::marker {
+    color: var(--primary);
+}
+
+/* Menu */
+.menu {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 700;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px 24px;
+    box-shadow: var(--shadow);
+}
+
+.menu h1 {
+    margin-bottom: 20px;
+}
+
+.explore-menu-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 24px;
+    padding: 10px 8px 14px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.explore-menu-list-item {
+    width: 152px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.explore-menu-list-item img {
+    width: 132px;
+    height: 132px;
+    object-fit: cover;
+    margin-bottom: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+
+.explore-menu-list-item p {
+    font-weight: 600;
+    text-align: center;
+    color: var(--muted);
+    margin: 0;
+    min-height: 42px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu hr {
+    margin: 12px 0;
+    height: 2px;
+    background-color: #f3e5d5;
+    border: none;
+}
+
+.explore-menu-list-item .active {
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 0 3px #ffd6c8;
+}
+
+/* Food */
+.food-display {
+    margin-top: 30px;
+}
+
+.food-display h2 {
+    font-weight: 800;
+}
+
+.food-display-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    margin-top: 24px;
+    gap: 24px;
+}
+
+.food-items {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(70, 32, 13, 0.08);
+    transition: all 0.25s ease;
+}
+
+.food-items:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0 18px 32px rgba(150, 66, 40, 0.2);
+}
+
+.food-item-image {
+    border-radius: 14px 14px 0 0;
+}
+
+.food-item-info {
+    padding: 10px;
+}
+
+.food-item-info p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.food-item-desc {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.food-item-price {
+    color: var(--primary);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.food-cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 10px 0;
+}
+
+.cart-image {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffd8c5;
+}
+
+.table-dark {
+    --bs-table-bg: #3d2a23 !important;
+    --bs-table-color: #fff4ee !important;
+}
+
+body.dark-theme .table {
+    color: #fff2e7;
+}
+
+body.dark-theme .table > :not(caption) > * > * {
+    background-color: transparent;
+    border-color: #58453a;
+}
+
+body.dark-theme .table thead th {
+    color: #ffd7c1;
+}
+
+body.dark-theme .text-muted {
+    color: #e3bfa9 !important;
+}
+
+body.dark-theme .btn-outline-danger {
+    color: #ffad93 !important;
+    border-color: #ff9a79 !important;
+}
+
+body.dark-theme .btn-outline-danger:hover {
+    color: #20140f !important;
+    background: #ff9a79 !important;
+}
+
+body.dark-theme a {
+    color: #ffc2a9;
+}
+
+body.dark-theme .btn-warning {
+    background: #f7c873 !important;
+    border-color: #f7c873 !important;
+    color: #24160f !important;
+}
+
+.feature-card {
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
+}
+
+.contact-info-box {
+    background: #fff7f0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.track-result {
+    background: #fff8f4;
+    border: 1px solid #ffd8c2;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.qr-payment-card {
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+}
+
+.qr-payment-image {
+    width: 210px;
+    height: 210px;
+    object-fit: contain;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    background: #fff;
+}
+
+.my-order-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #fffdfb;
+    padding: 14px;
+}
+
+.my-order-card table th {
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.status-chip {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+}
+
+.status-paid {
+    background: #dbf8e8;
+    color: #177245;
+    border: 1px solid #a7e9c4;
+}
+
+.status-pending {
+    background: #fff3d4;
+    color: #8a6300;
+    border: 1px solid #ffe199;
+}
+
+.status-failed {
+    background: #ffe1df;
+    color: #9d2217;
+    border: 1px solid #ffb9b4;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 18px 12px;
+    }
+
+    .food-display-list {
+        gap: 16px;
+    }
+
+    .logo {
+        font-size: 1.35rem;
+    }
+}
